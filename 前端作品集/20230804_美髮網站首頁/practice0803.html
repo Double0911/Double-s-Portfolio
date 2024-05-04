@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7ab59d9066.js" crossorigin="anonymous"></script>
+    <title>Hairmap</title>
+
+    <style>
+        @media(max-width:576px) {
+            .container {
+                padding: 0;
+            }
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-main {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+        .nav-main-word {
+            padding-left: 25px;
+            color: gray;
+            text-decoration: none;
+        }
+
+        .nav-main-word:hover {
+            color: orange;
+        }
+
+        .login-img {
+            background: url(images/setting.png) no-repeat center center;
+            width: 50px;
+            height: 30px;
+            display: block;
+            background-size: cover;
+            margin-left: 25px;
+        }
+
+        .nav-hamburger {
+            display: none;
+            color: gray;
+            padding-right: 10px;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        .rwd-nav {
+            display: none;
+        }
+
+        .rwd-nav li {
+            list-style: none;
+        }
+
+        .rwd-nav li a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: gray;
+            padding: 14px 20px;
+            width: 120px;
+            background-color: white;
+        }
+
+        @media(max-width:576px) {
+
+            .nav-main-word,
+            .login-img {
+                display: none;
+            }
+
+            .logo {
+                height: 30px;
+            }
+
+            .nav-hamburger {
+                display: block;
+                padding: 10px;
+            }
+
+            .rwd-nav {
+                display: block;
+                position: absolute;
+                top: 56px;
+                right: -120px;
+                transition: .6s;
+                z-index: 100;
+            }
+        }
+
+        .area1 {
+            position: relative;
+            background: url(images/long-hair.jpg);
+            background-size: cover;
+            height: 450px;
+        }
+
+        .blackbg {
+            background-color: black;
+            opacity: .5;
+            height: 450px;
+        }
+
+        .main-content {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            margin: 40px 0 0 -218px;
+        }
+
+        .main-content-logo {
+            display: block;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        .main-content-word {
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-border {
+            outline: 2px solid palevioletred;
+            padding: 3px;
+        }
+
+        .search-border-left:focus-visible {
+            outline: none;
+        }
+
+
+        .search-decoration {
+            background-color: transparent;
+            overflow: hidden;
+            border: none;
+            appearance: none;
+        }
+
+        .search-decoration:focus-visible {
+            outline: none;
+        }
+
+        .search-select-word {
+            color: white;
+            font-size: 15px;
+        }
+
+        .main-search-word {
+            color: gray;
+            font-size: 15px;
+        }
+
+        .search-border-left {
+            border: none;
+            border-left: 2px solid palevioletred;
+            padding-left: 10px;
+        }
+
+        .search-content {
+            background-color: transparent;
+            width: 250px;
+        }
+
+
+        .search_button {
+            background-color: palevioletred;
+            color: white;
+            padding: 5px;
+            border: 0;
+
+        }
+
+        .rwd-search-button {
+            width: 320px;
+            border: 0;
+            background-color: palevioletred;
+            padding: 5px;
+            margin-top: 5px;
+            color: white;
+            display: none;
+        }
+
+
+
+        @media(max-width:576px) {
+            .area1 {
+                height: 350px;
+            }
+
+            .blackbg {
+                height: 350px;
+            }
+
+            .search-content {
+                width: 220px;
+            }
+
+            .search_button {
+                display: none;
+
+            }
+
+            .main-content {
+                margin: 10px 0 0 -160px;
+                top: 30px;
+            }
+
+
+            br {
+                display: none;
+            }
+
+            .rwd-search-button {
+                display: block;
+            }
+
+            .search-select {
+                background-color: rgba(0, 0, 0, .5);
+                border-radius: 3px;
+            }
+        }
+
+        .area2 {
+            background: url(images/bg_icon.png);
+            background-size: cover;
+            height: 225px;
+            padding: 0 100px;
+        }
+
+        .main-content-icon {
+            width: 70px;
+            display: block;
+            margin: 0 auto;
+
+
+        }
+
+        .main-content-icon-word {
+            width: 150px;
+
+        }
+
+        .icon-word {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .icon-word-center {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        @media(max-width:576px) {
+            .area2 {
+                flex-direction: column;
+                height: 380px;
+
+            }
+
+            .space {
+                display: none;
+            }
+        }
+
+        .area3 {
+
+            padding: 15px 150px;
+
+        }
+
+        .image-word {
+            margin: 35px 0 5px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .bottomline {
+            width: 30px;
+            height: 2px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .image-container {
+            margin: 15px 0 5px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+        }
+
+        .image-short-word-bg {
+            position: relative;
+        }
+
+        .image-short-word {
+            background: rgba(255, 255, 255, .8);
+            width: 125px;
+            text-align: center;
+            color: palevioletred;
+            border: 1px solid palevioletred;
+            padding: 1px 0;
+            position: absolute;
+            right: -15px;
+            bottom: 20px;
+        }
+
+        .image-short {
+            height: 300px;
+            width: 200px;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+
+        .rwd-image-container {
+            display: none;
+
+        }
+
+        .image-buttom {
+            background-color: palevioletred;
+            color: white;
+            padding: 0 5px;
+            border: 0;
+            text-decoration: none;
+            margin-bottom: 35px;
+        }
+
+        @media(max-width:576px) {
+            .area3 {
+                padding: 15px 20px;
+            }
+
+            .image-buttom {
+                border-radius: 3px;
+                padding: 3px 15px;
+            }
+
+            .image-short {
+                height: 200px;
+                width: 150px;
+                object-fit: cover;
+                margin-bottom: 5px;
+            }
+
+
+        }
+
+        .area-designer {
+            padding: 0px 20px;
+            display: none;
+        }
+
+        .designerall{
+            flex-wrap: wrap;
+        }
+
+        .designer {
+            margin: 15px 0;
+        }
+
+        .image-circle {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-designer {
+            width: 150px;
+            object-fit: cover;
+        }
+
+        .image-circle p {
+            text-shadow: 0 0 3px black;
+            color: white;
+            position: absolute;
+            top: 100px;
+        }
+
+        .designer-word {
+            font-size: 10px;
+            margin: 5px 0 0 0;
+            text-align: center;
+        }
+
+        @media(max-width:576px) {
+            .area-designer {
+                display: block;
+            }
+        }
+
+        .area4 {
+            padding: 0px 150px 30px;
+        }
+
+        .image-long-container {
+            margin: 15px 0 5px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .image-long-bg {
+            width: 290px;
+            height: 200px;
+            background-size: cover;
+            margin-bottom: 5px;
+        }
+
+        .image-long-1 {
+            background-image: url(images/9344.jpg);
+        }
+
+        .image-long-2 {
+            background-image: url(images/128141.jpg);
+        }
+
+        .image-long-3 {
+            background-image: url(images/141965.jpg);
+        }
+
+        .image-long-bg p {
+            color: white;
+            text-shadow: 0 1px 0.3px black;
+            margin: 0;
+            background-color: transparent;
+        }
+
+        @media(max-width:576px) {
+            .area4 {
+                padding: 0px 20px 30px;
+            }
+
+            .image-long-container {
+                display: block;
+                justify-content: center;
+            }
+
+            .image-long-bg {
+                width: 350px;
+                height: 200px;
+                background-size: cover;
+                margin-top: 5px;
+            }
+        }
+
+        .footer-area1 {
+            background-color: #ddd;
+            height: 200px;
+        }
+
+        .phones-image {
+            height: 200px;
+        }
+
+        .footer-area1-word {
+            margin: 35px 0 5px;
+        }
+
+        .footer-bottomline {
+            margin-left: 85px;
+            width: 30px;
+            height: 2px;
+            background-color: black;
+        }
+
+        .phone-btn {
+            margin-top: 25px;
+        }
+
+        .phone-btn a {
+            display: inline-block;
+        }
+
+        .footer-area1-content {
+            color: palevioletred;
+            margin-top: 5px;
+        }
+
+        @media(max-width:576px) {
+            .footer-area1-content {
+                display: none;
+            }
+        }
+
+        .footer-area2 {
+            background-image: url(images/KV.jpg);
+            background-size: cover;
+
+
+        }
+
+        .footer-area-number {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .footer-area2-word {
+            color: white;
+            text-align: center;
+            padding: 10px 60px;
+        }
+
+        .footer-area2-word p {
+            margin-bottom: 4px;
+        }
+
+        .footer-area2-word h1 {
+            font-size: 60px;
+        }
+
+        .footer-area2-border {
+            width: 1px;
+            height: 105px;
+            background: white;
+            margin-top: 34px;
+        }
+
+
+
+        .footer-area2-title2 {
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-area2-word2 {
+            color: white;
+            margin-right: 20px;
+        }
+
+        .footer-bottomline2 {
+            width: 30px;
+            height: 2px;
+            background-color: black;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        .footer-area2-btn {
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            width: 140px;
+            padding: 10px 15px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+
+        @media(max-width:576px) {
+            .footer-area-number {
+                display: block;
+            }
+
+            .footer-area2-border {
+                display: none;
+            }
+
+            .footer-area2-title2 {
+                display: block;
+            }
+
+            .footer-area2-word2 {
+                text-align: center;
+            }
+
+            .footer-area2-button {
+                display: flex;
+                justify-content: center;
+                margin-top: 15px;
+            }
+
+            .footer-area2-btn {
+                width: 160px;
+                padding: 5px 20px;
+                margin: 7px;
+            }
+
+        }
+
+        .footer-area3 {
+            background-color: #ddd;
+            height: 150px;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-area3-icon {
+            height: 40px;
+        }
+
+        .footer-area3-icon-word {
+            width: 500px;
+            margin-right: 25px;
+        }
+
+        .footer-area3-icon-word p {
+            color: gray;
+        }
+
+        .footer-area3-contact img {
+            height: 25px;
+        }
+
+        .footer-area3-contact a {
+            color: gray;
+            margin: 0 10px 5px 0;
+            text-decoration: none;
+            display: flex;
+        }
+
+        .footer-area3-contact a p {
+            margin: 0 10px 5px 0;
+        }
+
+        .btn-join {
+            position: relative;
+        }
+
+        .join-icon {
+            background-image: url(images/btn_join.png);
+            background-size: cover;
+            width: 200px;
+            height: 60px;
+        }
+
+        .join-word {
+            position: absolute;
+            color: palevioletred;
+            text-decoration: none;
+            right: 21px;
+            top: 15px;
+            font-size: 20px;
+        }
+
+        .rwd-btn-join {
+            display: none;
+        }
+
+        .rwd-btn-join a {
+            text-decoration: none;
+            padding: 5px 95px;
+            width: 300px;
+            color: palevioletred;
+            border: 1px solid palevioletred;
+            margin: 10px auto;
+        }
+
+        @media(max-width:576px) {
+            .footer-area3 {
+                display: block;
+                height: auto;
+            }
+
+            .footer-area3-icon-word {
+                width: auto;
+                font-size: 5px;
+                margin: 0 5px;
+            }
+
+            .footer-area3-contact a {
+
+                width: 150px;
+                margin: 0 30px;
+            }
+
+            .footer-area3-contact a p {
+                font-size: 5px;
+                margin: 0;
+            }
+
+            .btn-join {
+                display: none;
+            }
+
+            .rwd-btn-join {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+
+        .footer-area4 {
+            height: auto;
+            background-color: #ddd;
+        }
+
+        .footer-area4-word {
+            padding: 25px 200px;
+            color: gray;
+            border-top: 2px solid gray;
+            text-align: center;
+
+        }
+
+        @media(max-width:576px) {
+            .footer-area4-word {
+                padding: 25px 55px;
+                margin: 0 20px;
+                border-top: 1px solid gray;
+                font-size: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                    <img class="logo" src="images/logo.png" alt="">
+                    <ul class="d-flex align-items-center nav-main">
+                        <li><a href="#" class="nav-main-word">找髮型</a></li>
+                        <li><a href="#" class="nav-main-word">找設計師</a></li>
+                        <li><a href="#" class="nav-main-word">美髮誌</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <ul class="d-flex align-items-center nav-main">
+                        <li><a href="#" class="nav-main-word">註冊</a></li>
+                        <li><a href="#" class="nav-main-word">登入</a></li>
+                        <li><a href="#" class="login-img"></a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <i class="fa-sharp fa-solid fa-bars nav-hamburger"></i>
+                    </div>
+                </div>
+            </div>
+            <ul class="rwd-nav">
+                <li><a href="#">找髮型</a></li>
+                <li><a href="#">找設計師</a></li>
+                <li><a href="#">美髮誌</a></li>
+                <li><a href="#">註冊</a></li>
+                <li><a href="#">登入</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="area1">
+                <div class="blackbg"></div>
+                <div class="main-content">
+                    <img src="images/logo_icon_gw.svg" alt="" class="main-content-logo">
+                    <h1 class="main-content-word">煩惱髮型嗎</h1>
+                    <h5 class="main-content-word">給你最多髮型靈感及在地優秀設計師</h5>
+                    <br>
+                    <div class="d-flex align-items-center search-border">
+                        <div class="search-select">
+                            <img src="images/icon_searchbar_location.png" alt="">
+                            <select class="search-select-word search-decoration">
+                                <option>找地區▾</option>
+                            </select>
+                            <input class="search-border-left main-search-word search-content" placeholder="搜尋髮型主題">
+                        </div>
+                        <button class="search_button">
+                            <img src="images/icon_searchbar_search.png" alt="">
+                            <span>去逛逛</span>
+                        </button>
+                    </div>
+                    <button class="rwd-search-button">
+                        <img src="images/icon_searchbar_search.png" alt="">
+                        <span>去逛逛</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="area2 d-flex justify-content-evenly align-items-center">
+                <div class="main-content-icon-word">
+                    <a href="#" class="icon-word">
+                        <img class="main-content-icon" src="images/icon_search.svg" alt="">
+                        <p class="icon-word-center">在地設計師作品</p>
+                        <p class="icon-word-center">輕鬆找</p>
+                    </a>
+                </div>
+                <div class="main-content-icon-word">
+                    <a href="#" class="icon-word">
+                        <img class="main-content-icon" src="images/icon_fashion.svg" alt="">
+                        <p class="icon-word-center">流行髮型</p>
+                        <p class="icon-word-center">一手掌握</p>
+                    </a>
+                </div>
+                <div class="main-content-icon-word">
+                    <a class="icon-word" href="#" class="icon-word">
+                        <img class="main-content-icon" src="images/icon_book.svg" alt="">
+                        <p class="icon-word-center">即時預約溝通</p>
+                        <p class="space">&nbsp;</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="area3">
+                <div>
+                    <h3 class="image-word">熱門主題</h3>
+                    <div class="bottomline"></div>
+                </div>
+                <div class="image-container">
+                    <div class="image-short-word-bg">
+                        <img class="image-short" src="images/2364.jpg" alt="">
+                        <p class="image-short-word">油頭</p>
+                    </div>
+                    <div class="image-short-word-bg">
+                        <img class="image-short" src="images/170606.jpg" alt="">
+                        <p class="image-short-word">灰色系</p>
+                    </div>
+                    <div class="image-short-word-bg">
+                        <img class="image-short" src="images/161089.jpg" alt="">
+                        <p class="image-short-word">大捲</p>
+                    </div>
+                    <div class="image-short-word-bg">
+                        <img class="image-short" src="images/14366_18.jpg" alt="">
+                        <p class="image-short-word">男孩髮型</p>
+                    </div>
+                </div>
+
+                <div class="text-end">
+                    <a href="#" class="image-buttom">more</a>
+                </div>
+            </div>
+            <div class="area-designer">
+                <div>
+                    <h3 class="image-word">人氣設計師</h3>
+                    <div class="bottomline"></div>
+                </div>
+                <div class="designerall d-flex justify-content-between">
+                    <div class="designer">
+                        <div class="image-circle d-flex justify-content-center">
+                            <img class="image-designer" src="images/dora.jpg" alt="">
+                            <p>Dora</p>
+                        </div>
+                        <p class="designer-word">40則貼文</p>
+                        <p class="designer-word">65人追蹤</p>
+                    </div>
+                    <div class="designer">
+                        <div class="image-circle d-flex justify-content-center">
+                            <img class="image-designer" src="images/3425_14.jpg" alt="">
+                            <p>摩斯</p>
+                        </div>
+                        <p class="designer-word">88則貼文</p>
+                        <p class="designer-word">172人追蹤</p>
+                    </div>
+                    <div class="designer">
+                        <div class="image-circle d-flex justify-content-center">
+                            <img class="image-designer" src="images/9743_2.jpg" alt="">
+                            <p>Unknown</p>
+                        </div>
+                        <p class="designer-word">33則貼文</p>
+                        <p class="designer-word">87人追蹤</p>
+                    </div>
+                    <div class="designer">
+                        <div class="image-circle d-flex justify-content-center">
+                            <img class="image-designer" src="images/22736_8.jpg" alt="">
+                            <p>Hong</p>
+                        </div>
+                        <p class="designer-word">81則貼文</p>
+                        <p class="designer-word">57人追蹤</p>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <a href="#" class="image-buttom">more</a>
+                </div>
+
+
+            </div>
+            <div class="area4">
+                <div>
+                    <h3 class="image-word">趨勢話題</h3>
+                    <div class="bottomline"></div>
+                </div>
+                <div class="image-long-container">
+                    <div class="d-flex justify-content-center">
+                        <div class="image-long-bg image-long-1 d-flex justify-content-center align-items-center">
+                            <p>鬆感的劉海！配上極捲的捲度！反而...</p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="image-long-bg image-long-2 d-flex justify-content-center align-items-center">
+                            <p>日系鬆鬆捲度 吹乾即可 霧面髮色</p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="image-long-bg image-long-3 d-flex justify-content-center align-items-center">
+                            <p>歐爸新寵，括號瀏海你跟風了嗎？</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <a href="#" class="image-buttom">more</a>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="footer-area1 d-flex justify-content-center">
+                <img class="phones-image" src="images/phones.png" alt="">
+                <div>
+                    <div>
+                        <h3 class="footer-area1-word">快速找到好髮型</h3>
+                        <div class="footer-bottomline"></div>
+                    </div>
+                    <div class="phone-btn">
+                        <a class="test" href="#">
+                            <img src="images/btn_app_ios.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="images/btn_app_android.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <h6 class="footer-area1-content">下載並註冊後就可以開始發表作品囉！</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-area2">
+                <div class="footer-area-number">
+                    <div class="footer-area2-word">
+                        <p>已有</p>
+                        <h1 class="border-right">635</h1>
+                        <p class="border-right">位設計師</p>
+                    </div>
+                    <div class="footer-area2-border"></div>
+                    <div class="footer-area2-word">
+                        <p>發表</p>
+                        <h1>6421</h1>
+                        <p>張髮型作品</p>
+                    </div>
+                </div>
+                <div class="footer-area2-title2">
+                    <div>
+                        <h3 class="footer-area2-word2">優秀設計師募集中</h3>
+                        <div class="footer-bottomline2"></div>
+                    </div>
+                    <div class="footer-area2-button">
+                        <a href="#" class="footer-area2-btn">了解更多</a>
+                        <a href="#" class="footer-area2-btn">立即免費註冊</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-area3">
+                <div class="d-flex footer-area3-icon-word">
+                    <img class="footer-area3-icon" src="images/logo_icon_g.svg" alt="">
+                    <p>HairMap美髮地圖團隊致力於打造出最貼心實用的美髮資訊交流社群，讓美髮時光成為每個人生命中的美好時刻。</p>
+                </div>
+                <div>
+                    <div class="footer-area3-contact d-flex">
+                        <a class="d-flex align-items-center" href="">
+                            <img src="images/email.svg" alt="">
+                            <p>&nbsp;聯絡我們</p>
+                        </a>
+                        <a class="d-flex align-items-center" href="">
+                            <img src="images/ios.svg" alt="">
+                            <p>&nbsp;iOS</p>
+                        </a>
+                    </div>
+                    <div class="footer-area3-contact d-flex">
+                        <a class="d-flex align-items-center" href="">
+                            <img src="images/facebook_g.svg" alt="">
+                            <p>&nbsp;粉絲專頁</p>
+                        </a>
+                        <a class="d-flex align-items-center" href="">
+                            <img src="images/android.svg" alt="">
+                            <p>&nbsp;Android</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="btn-join">
+                    <a href="#">
+                        <div class="join-icon"></div>
+                        <div class="join-word">設計師加入</div>
+                    </a>
+                </div>
+
+                <div class="rwd-btn-join">
+                    <a href="">
+                        <i class="fa-sharp fa-solid fa-users fa-fw"></i>
+                        <span>設計師加入</span>
+                    </a>
+                </div>
+                </a>
+            </div>
+            <div class="footer-area4 d-flex justify-content-center">
+                <span class="footer-area4-word">Hairdodo Inc. © 2016 All Rights Reserved使用者條款與隱私權政策</span>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    var btn = document.querySelector(".nav-hamburger");
+    btn.addEventListener("click", function () {
+        var location = document.querySelector('.rwd-nav').style.right;
+        if (location == "0px") {
+            document.querySelector('.rwd-nav').style.right = "-120px";
+        } else {
+            document.querySelector('.rwd-nav').style.right = "0px";
+        }
+    }, false)
+</script>
+
+</html>
