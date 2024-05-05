@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
+# In[11]:
 
 
 import requests
@@ -51,6 +51,8 @@ for i in range(len(t)):
     temskill=[]
     temcos=[]
     
+    #舊版技能抓取
+    '''
     for a in range(sample.count(",description:")-1):   #技能
         f1=sample.split(",description:")[a]
         remo=f1.split(",")[-1]
@@ -58,7 +60,23 @@ for i in range(len(t)):
         ok=sam.replace("\\u002"," ")
         temskill.append(ok)    #先把四個技能放在一起
     skill.append(temskill)     #再加進技能list 
+    '''
     
+    #新版技能抓取
+    a = 1
+    while True:
+        abilities_name_count = "abilities:name-{}".format(a)
+        try:
+            skill_name = soup2.find_all(attrs={"data-testid": abilities_name_count })[0].text
+        except:
+            break
+        else:
+            temskill.append(skill_name)
+            a = a+1
+    skill.append(temskill)
+    
+    #舊版外觀抓取
+    '''
     for b in range(1,sample.count(",chromas:")):    #外觀
         f1=sample.split(",chromas:")[b]
         remo=f1.split(",")[-1]
@@ -66,6 +84,21 @@ for i in range(len(t)):
         ok=sam.replace("\\u002"," ")
         temcos.append(ok)    #先把服裝放在一起
     cos.append(temcos)   #再加進服裝list
+    '''
+    
+    #新版技能抓取
+    b = 0
+    while True:
+        skin_name_count = "skins:button-{}".format(b)
+        try:
+            skin_name = soup2.find_all(attrs={"data-testid": skin_name_count })[0].text
+        except:
+            print("hi")
+            break
+        else:
+            temcos.append(skin_name)
+            b = b + 1
+    cos.append(temcos)
     
     #time.sleep(random.randint(6,11))
 
@@ -79,6 +112,12 @@ hi.to_excel("LOL.xlsx")
 df = pd.read_excel("LOL.xlsx")    #算出每個職業各有多少人
 p=pd.DataFrame(df['角色定位'].value_counts())
 print(p)
+
+
+# In[9]:
+
+
+
 
 
 # In[ ]:
