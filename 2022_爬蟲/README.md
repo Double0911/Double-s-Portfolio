@@ -1,8 +1,8 @@
 ## 爬蟲練習
-1. web_crawler_LOL.py
+1. web_crawler_LOL.py  
    　　此程式目的是爬LOL網頁，抓取角色的資料，包括稱號、名字、職業、介紹及被動技能，整理成一個excel檔並匯出，
    再利用excel算出每個職業各有多少人，並且在程式中輸出結果。
   ***
-2. web_crawler_kkbox.py
+2. web_crawler_kkbox.py  
    　　此程式爬kkbox的網站，抓取新歌排行榜、日榜及周榜歌曲，且輸出新歌日榜及單曲日榜的excel。另外，程式也會輸出當前新歌及時榜的前五名歌曲，
    他們在前24小時各是在第幾名，並做出折線圖。
