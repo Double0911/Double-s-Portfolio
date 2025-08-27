@@ -1,21 +1,27 @@
 # 廖辰軒 (LIAO, CHEN-HSUAN)
 * 生日：2000/09/11
-* 學歷：臺北醫學大學/ 醫務管理學系
+* 學歷：臺北醫學大學醫務管理學系 畢業
 * 住址：台北市士林區
 * E-mail：lcs890911@gmail.com
 ***
 ### 專業技能
-* 前端：HTML5 / CSS3 / RWD / Bootstrap / JavaScript / jQuery
-* 後端：C++ / C# / Python / MsSQL / .Net
+* 遊戲開發：Unity、C#
+* 伺服器與後端：.NET / MSSQL
+* 其他技能：HTML / CSS / JavaScript / jQuery / Bootstrap / RWD
 * 版本管理：Git
 
-1. 熟悉html、css，使用Bootstrap做出RWD網頁
-2. 熟悉javascript語法，理解且使用jQuery的框架寫法
-3. 理解C++及Python基礎語法，私下練習會用C++寫題，交學校作業時則使用Python
-4. 於.net使用C#寫出系統功能
-5. 熟悉SQL語法，可以實作CRUD功能
+1. 使用 Unity 與 C# 開發 2D 遊戲，實作一款小遊戲
+2. 整合廣告 SDK（Google AdMob），完成獎勵式廣告流程
+3. 熟悉 SQL 語法，可設計與操作資料表，實作 CRUD 功能
+4. 於 .NET 使用 C# 開發後端 API，並於前端串接
+5. 熟悉 HTML、CSS，能使用 Bootstrap 製作 RWD 網頁
+6. 熟悉 JavaScript 語法，能使用 jQuery 撰寫互動功能
+
 ***
 ### 工作經驗
-* 2023/7 - 2024/1 大同醫護股份有限公司  
+* 2023/07 - 2024/01 大同醫護股份有限公司  
   職位：程式設計實習生
+* 2024/07 - 2024/12 Edenred
+  職位：IT Intern
+
 
